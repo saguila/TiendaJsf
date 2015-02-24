@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>#{msg.menu_alta}</title>
+    </h:head>
+    <h:body>
+        <f:view locale="#{idiomaBean.locale}">
+        <h:form>
+            <h:outputLabel value="#{msg.alta_id}" />
+            <h:inputText value="#{libroBean.ID}" /><br/>
+            <h:outputLabel value="#{msg.alta_titulo}" />
+            <h:inputText value="#{libroBean.titulo}" /><br/>           
+            <h:outputLabel value="#{msg.alta_autor}" />
+            <h:inputText value="#{libroBean.autor}" /><br/>
+            <h:outputLabel value="#{msg.alta_editorial}" />
+            <h:inputText value="#{libroBean.editorial}" /><br/>            
+            <h:outputLabel value="#{msg.alta_isbn}" />
+            <h:inputText value="#{libroBean.isbn}" /><br/>
+            <h:outputLabel value="#{msg.alta_publicacion}" />
+            <h:inputText value="#{libroBean.publicacion}" /><br/>
+            <h:outputLabel value="#{msg.alta_precio}" />
+            <h:inputText value="#{libroBean.precio}" /><br/>
+            <h:outputLabel value="#{msg.alta_descripcion}" />
+            <h:inputText value="#{libroBean.descripcion}" /><br/>
+            <h:outputLabel value="#{msg.alta_imagen}" />
+            <h:inputText value="#{libroBean.imagen}" />
+            <br/>
+            <h:commandButton action="#{libroBean.alta()}" value="#{msg.boton_alta}" /><br/>
+        </h:form>
+            </f:view>
+    </h:body>
+</html>

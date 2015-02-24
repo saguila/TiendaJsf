@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Inicio</title>
+    </h:head>
+    <h:body>
+        <f:view locale="#{idiomaBean.locale}">
+
+            <h:form>
+                <h:commandLink action="#{idiomaBean.cambiarIdioma('es')}">
+                    <h:graphicImage value="/img/spain.png" width="50" height="50" />
+                </h:commandLink>
+                <h:commandLink action="#{idiomaBean.cambiarIdioma('en')}">
+                    <h:graphicImage value="/img/england.png" width="50" height="50" />
+                </h:commandLink>
+                <h:commandLink action="#{idiomaBean.cambiarIdioma('de')}">
+                    <h:graphicImage value="/img/deutschland.png" width="50" height="50" />
+                </h:commandLink>
+                <br/>
+                <h:commandLink value="#{msg.menu_todos}" action="mostrarTodos" />
+                <br/>
+                <h:commandLink value="#{msg.menu_alta}" action="formularioAlta" />
+                <br/>
+                <h:commandLink value="#{msg.menu_modificar}" action="formularioModificar" />
+                <br/>
+                <h:commandLink value="#{msg.menu_baja}" action="formularioBaja" />
+                <br/>
+                <h:commandLink value="#{msg.menu_buscar}" action="formularioBuscar" />
+                <br/>
+                <h:commandLink value="#{msg.menu_buscar_isbn}" action="formularioBuscarIsbn" />
+                <br/>
+                <h:commandLink value="#{msg.menu_busca_titulo}" action="formularioBuscarTitulo" />
+                <br/>
+                <h:commandLink value="#{msg.menu_mostrar_carrito}" action="mostrarCarrito" />
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

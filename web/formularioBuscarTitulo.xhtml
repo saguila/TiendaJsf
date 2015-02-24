@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>#{msg.menu_busca_titulo}</title>
+    </h:head>
+    <h:body>
+        <f:view locale="#{idiomaBean.locale}">
+            <h:dataTable var="libro" value="#{libroBean.buscaTitulo()}" border="1">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg.alta_id}" />
+                    </f:facet>
+                    <h:outputText value="#{libro.ID}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg.alta_titulo}" />
+                    </f:facet>
+                    <h:outputText value="#{libro.titulo}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg.alta_autor}" />
+                    </f:facet>
+                    <h:outputText value="#{libro.autor}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg.alta_editorial}" />
+                    </f:facet>
+                    <h:outputText value="#{libro.editorial}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg.alta_isbn}" />
+                    </f:facet>
+                    <h:outputText value="#{libro.isbn}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg.alta_publicacion}" />
+                    </f:facet>
+                    <h:outputText value="#{libro.publicacion}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg.alta_precio}" />
+                    </f:facet>
+                    <h:outputText value="#{libro.precio}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg.alta_descripcion}" />
+                    </f:facet>
+                    <h:outputText value="#{libro.descripcion}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg.alta_imagen}" />
+                    </f:facet>
+                    <h:form>
+                        <h:graphicImage value="#{libro.imagen}" width="60" height="40" />
+                    </h:form>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg.etiqueta_comprar}" />
+                    </f:facet>
+                    <h:form>
+                        <h:commandLink action="#{gestionCompra.addLibro(libro.ID)}">
+                            <h:graphicImage value="/img/carrito.gif" width="60" height="40" />
+                        </h:commandLink>
+                    </h:form>
+                </h:column>
+            </h:dataTable>
+        </f:view>
+    </h:body>
+</html>
